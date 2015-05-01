@@ -31,10 +31,11 @@
 (setq multi-term-program "/bin/zsh")
 
 ;; add keybindings to term-mode
-; (add-to-list 'term-bind-key-alist '("<M-backspace>" . term-send-raw-meta))
-; (add-to-list 'term-bind-key-alist '("C-w" . term-send-backward-kill-word))
-; (add-to-list 'term-bind-key-alist '("M-d" . term-send-forward-kill-word))
-; (add-to-list 'term-bind-key-alist '("C-y" . term-paste))
+(setq term-bind-key-alist
+      (list (cons "<M-backspace>" 'term-send-raw-meta)
+            (cons "C-w" 'term-send-backward-kill-word)
+            (cons "M-d" 'term-send-forward-kill-word)
+            (cons "C-y" 'term-paste)))
 
 ;; set space mode
 (setq-default indent-tabs-mode nil)
