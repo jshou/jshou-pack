@@ -9,10 +9,6 @@
 ;; set emacs font size
 (set-face-attribute 'default nil :height 100)
 
-;; show line numbers
-(global-linum-mode t)
-(setq linum-format "%d ")
-
 ;; use melpa for package management
 (require 'package)
 (add-to-list 'package-archives
