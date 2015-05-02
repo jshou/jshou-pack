@@ -27,11 +27,15 @@
 (setq multi-term-program "/bin/zsh")
 
 ;; add keybindings to term-mode
+;; there's more here http://www.emacswiki.org/emacs/multi-term.el
 (setq term-bind-key-alist
       (list (cons "<M-backspace>" 'term-send-raw-meta)
             (cons "C-w" 'term-send-backward-kill-word)
             (cons "M-d" 'term-send-forward-kill-word)
-            (cons "C-y" 'term-paste)))
+            (cons "C-y" 'term-paste)
+            (cons "C-c C-c" 'term-interrupt-subjob)
+            (cons "C-p" 'previous-line)
+            (cons "C-n" 'next-line)))
 
 ;; set space mode
 (setq-default indent-tabs-mode nil)
