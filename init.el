@@ -41,5 +41,8 @@
 (setq-default indent-tabs-mode nil)
 ;; remove trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (setq fiplr-ignored-globs '((directories (".git" ".svn" ".tox"))
                             (files ("*.pyc"))))
+
+(global-linum-mode 1)
