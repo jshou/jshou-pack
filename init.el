@@ -45,4 +45,5 @@
 (setq fiplr-ignored-globs '((directories (".git" ".svn" ".tox"))
                             (files ("*.pyc"))))
 
+(git-gutter:linum-setup)
 (global-linum-mode 1)
