@@ -65,3 +65,6 @@
 
 (add-hook 'term-mode-hook (lambda()
         (setq yas-dont-activate t)))
+
+(setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "google-chrome")
