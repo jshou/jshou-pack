@@ -29,20 +29,35 @@
 ;; add keybindings to term-mode
 ;; there's more here http://www.emacswiki.org/emacs/multi-term.el
 (setq term-bind-key-alist
-      (list (cons "<M-backspace>" 'term-send-raw-meta)
-            (cons "C-w" 'term-send-backward-kill-word)
-            (cons "M-d" 'term-send-forward-kill-word)
-            (cons "C-y" 'term-paste)
+      (list (cons "<C-backspace>" 'term-send-backward-kill-word)
+            (cons "<M-backspace>" 'term-send-raw-meta)
             (cons "C-c C-c" 'term-interrupt-subjob)
+            (cons "C-c C-e" 'term-send-esc)
+            (cons "C-m" 'term-send-return)
+            (cons "C-n" 'next-line)
             (cons "C-p" 'previous-line)
-            (cons "C-n" 'next-line)))
+            (cons "C-r" 'isearch-backward)
+            (cons "C-s" 'isearch-forward)
+            (cons "C-w" 'term-send-backward-kill-word)
+            (cons "C-y" 'term-paste)
+            (cons "M-," 'term-send-raw)
+            (cons "M-." 'comint-dynamic-complete)
+            (cons "M-M" 'term-send-forward-kill-word)
+            (cons "M-N" 'term-send-backward-kill-word)
+            (cons "M-b" 'term-send-backward-word)
+            (cons "M-d" 'term-send-forward-kill-word)
+            (cons "M-f" 'term-send-forward-word)
+            (cons "M-n" 'term-send-down)
+            (cons "M-o" 'term-send-backspace)
+            (cons "M-p" 'term-send-up)
+            (cons "M-r" 'term-send-reverse-search-history)))
 
 ;; set space mode
 (setq-default indent-tabs-mode nil)
 ;; remove trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(setq fiplr-ignored-globs '((directories (".git" ".svn" ".tox"))
+(setq fiplr-ignored-globs '((directories (".git" ".svn" ".tox" "venv"))
                             (files ("*.pyc"))))
 
 (git-gutter:linum-setup)
