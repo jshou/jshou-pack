@@ -68,3 +68,5 @@
 
 (setq browse-url-browser-function 'browse-url-generic
           browse-url-generic-program "google-chrome")
+
+(set-face-attribute 'default nil :height 120)
